@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Movie Ticket Booking</h1>
+        <div class="search-bar">
+            <input type="text" id="movie-search" placeholder="Search for movies...">
+            <button id="search-btn">Search</button>
+        </div>
+    </header>
+    <main>
+        <section id="movie-list" class="movie-list">
+            <!-- Movies will be dynamically populated here -->
+        </section>
+
+        <section id="seat-selection" class="seat-selection hidden">
+            <h2 id="seat-movie-title">Select Seats</h2>
+            <table class="seat-table">
+                <tbody id="seat-grid">
+                    <!-- Seats will be dynamically generated here -->
+                </tbody>
+            </table>
+            <p id="selected-seats">Selected Seats: None</p>
+            <button id="confirm-btn">Confirm Selection</button>
+            <button id="cancel-btn">Cancel</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("dpNjWcW0zCksg-wr0"); // Replace with your EmailJS user ID
+    })();
+</script>
+<p id="selected-seats">Selected Seats: None</p>
+<input type="email" id="customer-email" placeholder="Enter your email" required>
+<button id="send-email-btn">Send Confirmation Email</button>
+<section id="seat-selection" class="seat-selection hidden">
+    <h2 id="seat-movie-title">Select Seats</h2>
+    <table class="seat-table">
+        <tbody id="seat-grid">
+            <!-- Seats will be dynamically generated here -->
+        </tbody>
+    </table>
+    <p id="selected-seats">Selected Seats: None</p>
+    <input type="email" id="customer-email" placeholder="Enter your email" required>
+    <button id="send-email-btn">Send Confirmation Email</button>
+    <button id="confirm-btn">Confirm Selection</button>
+    <button id="cancel-btn">Cancel</button>
+</section>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("dpNjWcW0zCksg-wr0"); // Replace with your EmailJS user ID
+    })();
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #515151;
+        }
+        button {
+            background-color: #FFA500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e69500;
+        }
+        #payment-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 300px;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+        }
+        input {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal-buttons {
+            text-align: right;
+        }
+        .modal-buttons button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>Click the button below to simulate a payment process:</p>
+    <button id="pay-now-btn">Pay Now</button>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal">
+        <h3>Mock Payment</h3>
+        <p>Enter your card details below:</p>
+        <form id="mock-payment-form">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9876 5432" required>
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="password" id="cvv" placeholder="123" required>
+
+            <div class="modal-buttons">
+                <button type="button" id="cancel-payment" style="background-color: grey;">Cancel</button>
+                <button type="submit">Submit Payment</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Open the payment modal
+        document.getElementById("pay-now-btn").addEventListener("click", () => {
+            document.getElementById("payment-modal").style.display = "block";
+        });
+
+        // Handle form submission
+        document.getElementById("mock-payment-form").addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form from submitting
+
+            const cardNumber = document.getElementById("card-number").value.trim();
+            const expiryDate = document.getElementById("expiry-date").value.trim();
+            const cvv = document.getElementById("cvv").value.trim();
+
+            if (!cardNumber || !expiryDate || !cvv) {
+                alert("Please fill in all fields!");
+                return;
+            }
+
+            // Simulate payment processing
+            alert(`Payment successful! Card Number: ${cardNumber}`);
+            document.getElementById("payment-modal").style.display = "none";
+
+            // Clear the form fields
+            document.getElementById("card-number").value = "";
+            document.getElementById("expiry-date").value = "";
+            document.getElementById("cvv").value = "";
+        });
+
+        // Close the modal
+        document.getElementById("cancel-payment").addEventListener("click", () => {
+            document.getElementById("payment-modal").style.display = "none";
+        });
+    </script>
+</body>
+</html>

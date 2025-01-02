@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4e4e4e;
+    color: #000;
+}
+
+.header {
+    background-color: #FFA500;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.search-bar {
+    margin-top: 1rem;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    width: 70%;
+    border: 1px solid #808080;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 0.5rem;
+    background-color: #808080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie-list {
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+}
+
+.movie-item {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.movie-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.movie-item button {
+    padding: 0.5rem 1rem;
+    background-color: #FFA500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.movie-item button:hover {
+    background-color: #FF4500;
+}
+.hidden {
+    display: none;
+}
+
+.seat-selection {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.seat-table {
+    margin: 1rem auto;
+    border-collapse: collapse;
+}
+
+.seat-table td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #808080;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.seat-table td.selected {
+    background-color: #FFA500;
+}
+
+.seat-table td.reserved {
+    background-color: #808080;
+    cursor: not-allowed;
+}
+
+button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirm-btn {
+    background-color: #FFA500;
+    color: #fff;
+}
+
+#cancel-btn {
+    background-color: #808080;
+    color: #fff;
+}
+input[type="email"] {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    width: 80%;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-email-btn {
+    background-color: #FFA500;
+    color: #fff;
+}
+
+#send-email-btn:hover {
+    background-color: #FF4500;
+}
